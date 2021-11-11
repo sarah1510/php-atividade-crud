@@ -1,4 +1,12 @@
 <?php
+    session_start();
+
+    require('../database/conexao.php');
+
+    $sql = "SELECT * FROM tbl_pessoa";
+
+    $resultado = mysqli_query($conexao, $sql);
+
     include('../componentes/header.php');
 ?>
 
@@ -21,18 +29,28 @@
 
     <tbody>
             <tr>
-                <th>1</th>
+                <!-- <th>1</th>
                 <th>TESTE DE NOME</th>
                 <th>TESTE DE SOBRENOME</th>
                 <th>TESTE DE EMAIL</th>
-                <th>TESTE DE CELULAR</th>
-                <th>
-                    <button class="btn btn-warning">Editar</button>
+                <th>TESTE DE CELULAR</th> -->
 
-                    <form action="" method="post" style="display: inline;">
+                <?php 
+
+                   
+                
+                ?>
+                <th>
+
+                    <a href="editar.php?cod_pessoa=<?php echo $dados["cod_pessoa"]?>">EDITAR</a>
+                    <a href="acoes.php?cod_pessoa=<?php echo $dados["cod_pessoa"].'&acao=delete'?>" >EXCLUIR</a>
+
+                    <!-- <button class="btn btn-warning">Editar</button> -->
+
+                    <!-- <form action="" method="post" style="display: inline;">
                         <input type="hidden" name="id" value="">
                         <button class="btn btn-danger">Excluir</button>
-                    </form>
+                    </form> -->
                     
                 </th>
             </tr>
